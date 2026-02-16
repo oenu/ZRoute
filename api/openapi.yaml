@@ -9,6 +9,8 @@ info:
 paths:
   /health:
     $ref: './paths/_index.yaml#/health'
+  /example:
+    $ref: './paths/_index.yaml#/example'
 components:
   schemas:
     $ref: './components/schemas/_index.yaml'

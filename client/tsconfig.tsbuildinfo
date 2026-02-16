@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/generated/index.ts","./src/generated/runtime.ts","./src/generated/apis/defaultapi.ts","./src/generated/apis/index.ts","./src/generated/models/exampleobject.ts","./src/generated/models/healthstatus.ts","./src/generated/models/index.ts"],"version":"5.9.3"}

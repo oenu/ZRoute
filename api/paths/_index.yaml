@@ -5,3 +5,16 @@ health:
     responses:
       '200':
         description: OK
+
+
+example:
+  get:
+    operationId: getExample
+    summary: Example endpoint
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/_index.yaml#/ExampleObject'

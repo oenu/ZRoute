@@ -24,6 +24,8 @@ dependencies {
     implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.openapitools:jackson-databind-nullable:0.2.6")
+    implementation("com.fasterxml.jackson.core:jackson-databind")
 
     errorprone("com.google.errorprone:error_prone_core:2.47.0")
 
@@ -56,9 +58,9 @@ openApiGenerate {
     apiPackage.set("dev.zroute.server.api")
     modelPackage.set("dev.zroute.server.model")
     configOptions.set(mapOf(
-        "interfaceOnly" to "true",
         "useSpringBoot3" to "true",
-        "documentationProvider" to "none"
+        "documentationProvider" to "none",
+        "interfaceOnly" to "true"
     ))
 }
 
