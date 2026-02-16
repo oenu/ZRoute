@@ -3,3 +3,16 @@ HealthStatus:
   properties:
     status:
       type: string
+
+
+ExampleObject:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+  example: 
+    id: 1
+    name: "Example Name"
+    
