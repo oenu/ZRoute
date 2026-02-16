@@ -11,9 +11,8 @@ public class ExampleController implements ExampleApi {
 
   @Override
   public ResponseEntity<ExampleObject> getExample() {
-    ExampleObject example = new ExampleObject();
-    example.setId(1);
-    example.setName("Example Name");
-    return ResponseEntity.ok(example);
+    ExampleObject obj =  ExampleObject.builder().name("test").id(1).build();
+
+    return ResponseEntity.ok(obj);
   }
 }

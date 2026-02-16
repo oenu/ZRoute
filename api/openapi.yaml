@@ -6,6 +6,11 @@ info:
   license:
     identifier: GPL-3.0-or-later
     name: GPL-3.0-or-later
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Development server
+  - url: https://api.zroute.example.com/api/v1
+    description: Production server
 paths:
   /health:
     $ref: './paths/_index.yaml#/health'

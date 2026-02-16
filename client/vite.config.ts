@@ -7,6 +7,14 @@ export default defineConfig({
     react(),
     dts({ tsconfigPath: './tsconfig.json' }),
   ],
+  server: {
+    proxy: {
+      '/api/v1': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+      },
+    },
+  },
   build: {
     lib: {
       entry: 'src/index.ts',
