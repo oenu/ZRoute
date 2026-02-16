@@ -38,6 +38,12 @@ build-jar: ## Build executable server JAR
 
 ##@ Development
 
+dev: ## Run both server and client in development mode
+	@echo "Starting development servers..."
+	@trap 'kill 0' EXIT; \
+	(cd server && ./gradlew bootRun) & \
+	(cd client && pnpm dev)
+
 dev-client: ## Start client development server
 	cd client && pnpm dev
 
