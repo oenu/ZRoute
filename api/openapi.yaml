@@ -4,6 +4,7 @@ info:
   version: 0.1.0
   description: API for logical mapping of transit systems
   license:
+    identifier: GPL-3.0-or-later
     name: GPL-3.0-or-later
 paths:
   /health:
