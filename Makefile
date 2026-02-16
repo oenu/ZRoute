@@ -110,6 +110,8 @@ clean: clean-server clean-client ## Clean all build artifacts
 clean-server: ## Clean server build artifacts
 	@echo "Cleaning server..."
 	cd server && ./gradlew clean
+	@echo "Cleaning generated server API code..."
+	rm -rf server/src/main/generated/openapi
 
 clean-client: ## Clean client build artifacts
 	@echo "Cleaning client..."
