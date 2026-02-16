@@ -11,11 +11,14 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "generate-api": "openapi-generator-cli generate -i ../api/bundled/openapi.yaml -g typescript-fetch -o src/generated --additional-properties=supportsES6=true,typescriptThreePlus=true"
+    "generate-api": "pnpm bundle-api && openapi-generator-cli generate -i ../api/bundled/openapi.yaml -g typescript-fetch -o src/generated --additional-properties=supportsES6=true,typescriptThreePlus=true",
+    "bundle-api": "npx @redocly/cli bundle ../api/openapi.yaml -o ../api/bundled/openapi.yaml"
   },
   "peerDependencies": {
     "react": "^19.0.0",
