@@ -26,6 +26,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.openapitools:jackson-databind-nullable:0.2.6")
     implementation("com.fasterxml.jackson.core:jackson-databind")
+    implementation("org.jspecify:jspecify:1.0.0")
 
     errorprone("com.google.errorprone:error_prone_core:2.47.0")
 
@@ -59,10 +60,22 @@ openApiGenerate {
     modelPackage.set("dev.zroute.server.model")
     configOptions.set(mapOf(
         "useSpringBoot3" to "true",
+        "useJakartaEe" to "true",
+        "useBeanValidation" to "true",
+        "dateLibrary" to "java8",
         "openApiNullable" to "true",
         "documentationProvider" to "none",
         "interfaceOnly" to "true",
-        "generateBuilders" to "true"
+        "generateBuilders" to "true",
+        "buildTool" to "gradle",
+        "additionalModelTypeAnnotations" to "@org.jspecify.annotations.Nullable",
+        "hideGenerationTimestamp" to "true",
+        "disallowAdditionalPropertiesIfNotPresent" to "false",
+        "useRuntimeException" to "true",
+        "serializableModel" to "true",
+        "containerDefaultToNull" to "false",
+        "defaultToEmptyContainer" to "true",
+        "enumUnknownDefaultCase" to "true"
     ))
 }
 
