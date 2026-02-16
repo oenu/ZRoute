@@ -24,9 +24,9 @@ dependencies {
     implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.openapitools:jackson-databind-nullable:0.2.6")
+    implementation("org.openapitools:jackson-databind-nullable:0.2.9")
     implementation("com.fasterxml.jackson.core:jackson-databind")
-    implementation("org.jspecify:jspecify:1.0.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.1")
 
     errorprone("com.google.errorprone:error_prone_core:2.47.0")
 
@@ -64,18 +64,19 @@ openApiGenerate {
         "useBeanValidation" to "true",
         "dateLibrary" to "java8",
         "openApiNullable" to "true",
-        "documentationProvider" to "none",
+        "documentationProvider" to "springdoc",
+        "annotationLibrary" to "swagger2",
         "interfaceOnly" to "true",
         "generateBuilders" to "true",
-        "buildTool" to "gradle",
-        "additionalModelTypeAnnotations" to "@org.jspecify.annotations.Nullable",
         "hideGenerationTimestamp" to "true",
         "disallowAdditionalPropertiesIfNotPresent" to "false",
         "useRuntimeException" to "true",
         "serializableModel" to "true",
-        "containerDefaultToNull" to "false",
-        "defaultToEmptyContainer" to "true",
-        "enumUnknownDefaultCase" to "true"
+        "enumUnknownDefaultCase" to "true",
+        "useResponseEntity" to "true",
+        "generateApis" to "true",
+        "generateModels" to "true",
+        "useOptional" to "true"
     ))
 }
 
