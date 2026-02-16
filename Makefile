@@ -22,7 +22,7 @@ build: build-api build-server build-client ## Build all components (API, server,
 
 build-api: ## Bundle OpenAPI specification
 	@echo "Bundling API specification..."
-	cd client && pnpm bundle-api
+	cd client && pnpm api:bundle
 
 build-server: ## Build Spring Boot server
 	@echo "Building server..."
@@ -54,11 +54,15 @@ test-server: ## Run server tests
 
 ##@ Code Quality
 
-format: format-server ## Format all code
+format: format-server format-client ## Format all code
 
 format-server: ## Format server code with Spotless
 	@echo "Formatting server code..."
 	cd server && ./gradlew spotlessApply
+
+format-client: ## Format client code with prettier and eslint
+	@echo "Formatting client code..."
+	cd client && pnpm lint:fix
 
 lint: lint-server ## Check code formatting/quality
 
@@ -76,7 +80,7 @@ generate-api: generate-api-client generate-api-server ## Generate all API code (
 
 generate-api-client: ## Generate TypeScript client from OpenAPI spec
 	@echo "Generating TypeScript API client..."
-	cd client && pnpm generate-api
+	cd client && pnpm api:generate
 
 generate-api-server: ## Generate Spring interfaces from OpenAPI spec
 	@echo "Generating Spring API server code..."
@@ -85,7 +89,7 @@ generate-api-server: ## Generate Spring interfaces from OpenAPI spec
 ##@ Documentation
 
 docs-api: ## Generate API documentation (bundles OpenAPI spec)
-	cd client && pnpm bundle-api
+	cd client && pnpm api:bundle
 	@echo "API documentation bundled at api/bundled/openapi.yaml"
 
 docs-server: ## Generate server Javadoc

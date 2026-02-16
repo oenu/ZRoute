@@ -30,6 +30,7 @@ export default defineConfig(
       'build/**',
       'coverage/**',
       'dist/**',
+      'eslint_rules/**',
       'node_modules/**',
       'src/generated/**',
       '*.config.{js,cjs,mjs,ts,cts,mts}',

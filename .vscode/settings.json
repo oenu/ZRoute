@@ -9,5 +9,12 @@
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "java.compile.nullAnalysis.mode": "automatic"
 }
