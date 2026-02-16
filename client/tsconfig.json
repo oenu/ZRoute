@@ -11,9 +11,7 @@
     "declarationMap": true,
     "outDir": "dist",
     "rootDir": "src",
-    "alwaysStrict": true,
+    "alwaysStrict": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
