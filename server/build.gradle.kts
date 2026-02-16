@@ -54,20 +54,22 @@ spotless {
 openApiGenerate {
     generatorName.set("spring")
     inputSpec.set("${rootProject.projectDir}/../api/bundled/openapi.yaml")
-    outputDir.set("${layout.buildDirectory.get()}/generated/openapi")
+    outputDir.set("${rootProject.projectDir}/src/main/generated/openapi")
     apiPackage.set("dev.zroute.server.api")
     modelPackage.set("dev.zroute.server.model")
     configOptions.set(mapOf(
         "useSpringBoot3" to "true",
+        "openApiNullable" to "true",
         "documentationProvider" to "none",
-        "interfaceOnly" to "true"
+        "interfaceOnly" to "true",
+        "generateBuilders" to "true"
     ))
 }
 
 sourceSets {
     main {
         java {
-            srcDir("${layout.buildDirectory.get()}/generated/openapi/src/main/java")
+            srcDir("${rootProject.projectDir}/src/main/generated/openapi/src/main/java")
         }
     }
 }

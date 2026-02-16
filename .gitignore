@@ -34,6 +34,9 @@ node_modules/
 client/dist/
 client/src/generated/
 
+# Generated code
+server/src/main/generated/
+
 # API
 api/bundled/
 
