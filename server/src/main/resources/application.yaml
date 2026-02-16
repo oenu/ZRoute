@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ZRoute
+server:
+  port: 8080

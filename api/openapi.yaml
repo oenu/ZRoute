@@ -1,0 +1,13 @@
+openapi: 3.1.0
+info:
+  title: ZRoute API
+  version: 0.1.0
+  description: API for logical mapping of transit systems
+  license:
+    name: GPL-3.0-or-later
+paths:
+  /health:
+    $ref: './paths/_index.yaml#/health'
+components:
+  schemas:
+    $ref: './components/schemas/_index.yaml'

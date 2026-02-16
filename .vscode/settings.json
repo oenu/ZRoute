@@ -1,0 +1,12 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.gradle.java.home": "",
+  "java.jdt.ls.vmargs": "-Xmx2g -XX:+HeapDumpOnOutOfMemoryError",
+  "java.checkstyle.configuration": "${workspaceFolder}/server/config/checkstyle/checkstyle.xml",
+  "java.checkstyle.version": "10.21.4",
+  "java.import.gradle.home": "",
+  "editor.formatOnSave": true,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
+}
